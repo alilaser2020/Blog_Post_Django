@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse_lazy
 from .forms import PostForm
 from .models import Post
@@ -20,3 +20,11 @@ class NewPostView(CreateView):
     form_class = PostForm
     success_url = reverse_lazy('home')
     template_name = 'new_post.html'
+
+
+class DetailPostView(DetailView):
+    """
+    A class view for reading details of post (Read of CRUD operations)
+    """
+    model = Post
+    template_name = 'single_post.html'

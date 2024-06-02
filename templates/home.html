@@ -35,23 +35,25 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="#">{{ post.title }}</a>
+                <a href="{% url 'detail_post' post.pk %}">{{ post.title }}</a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{ post.author }}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
-                    <a href="#"><time datetime="2020-01-01">{{ post.date }}</time></a>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i>
+                    <a href="{% url 'detail_post' post.pk %}">{{ post.author }}</a>
                   </li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">12 Comments</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
+                    <a href="{% url 'detail_post' post.pk %}"><time datetime="2020-01-01">{{ post.date }}</time></a>
+                  </li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'detail_post' post.pk %}">12 Comments</a></li>
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p>{{ post.excerpt }}</p>
                 <div class="read-more">
-                  <a href="#">Read More</a>
+                  <a href="{% url 'detail_post' post.pk %}">Read More</a>
                 </div>
               </div>
 
