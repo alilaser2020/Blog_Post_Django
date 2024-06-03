@@ -1,4 +1,5 @@
-from django.views.generic import ListView, CreateView, DetailView
+from django.views.generic import (ListView, CreateView, DetailView,
+                                  UpdateView, DeleteView)
 from django.urls import reverse_lazy
 from .forms import PostForm
 from .models import Post
@@ -28,3 +29,21 @@ class DetailPostView(DetailView):
     """
     model = Post
     template_name = 'single_post.html'
+
+
+class UpdatePostView(UpdateView):
+    """
+    A class view for updating post (Update of CRUD operations)
+    """
+    model = Post
+    fields = ['title', 'excerpt', 'body', 'photo']
+    template_name = 'update_post.html'
+
+
+class DeletePostView(DeleteView):
+    """
+    A class view for deleting post (Delete of CRUD operations)
+    """
+    model = Post
+    success_url = reverse_lazy('home')
+    template_name = 'delete_post.html'
