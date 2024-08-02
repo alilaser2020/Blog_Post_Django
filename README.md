@@ -6,6 +6,10 @@ pip install django~=4.2.13
 
 pip install pillow
 
+pip install crispy-bootstrap4
+
+pip install django-crispy-forms
+
 Installed commands:
 python -m venv .venv
 
