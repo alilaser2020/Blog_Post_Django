@@ -1,7 +1,7 @@
 
 # Blog Post Django
 
-A general blog post web application developed with Django in 8 version
+A general blog post web application developed with Django in 8 version (branch)
 
 ## Installed apps:
 pip install django~=4.2.13
